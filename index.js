@@ -6,9 +6,8 @@ function Persona(nombre, apellido, edad, dias,){
 }
 let boton = document.getElementById("boton");
 boton.onclick = capturar;
-let boton2 = document.getElementById("boton2");
-boton2.onclick = borrar;
-
+let boton2 = document.getElementById("boton2")
+boton2.onclick = cerrarSesion;
 
 function capturar(onclick){
     onclick.preventDefault();
@@ -19,6 +18,22 @@ function capturar(onclick){
     
     if (parseInt(edadCapturar) < 18) {
         alert("No está autorizado para alquilar un vehiculo")
+        return;
+    }
+    if ((nombreCapturar)== ""){
+        alert("los campos no pueden estar vacios");
+        return;
+    }
+    if ((apellidoCapturar)== ""){
+        alert("los campos no pueden estar vacios");
+        return;
+    }
+    if ((edadCapturar)== ""){
+        alert("los campos no pueden estar vacios");
+        return;
+    }
+    if ((diasCapturar)== ""){
+        alert("los campos no pueden estar vacios");
         return;
     }
     
@@ -40,9 +55,8 @@ function agregar(){
     localStorage.setItem("cliente1", JSON.stringify(datosClientes));
 };
 
-//function borrar(onclick){
-//  onclick.preventDefault();
-//localStorage.clear;
-//}
 
-
+function cerrarSesion(onclick){
+    onclick.preventDefault
+    localStorage.clear();
+}
